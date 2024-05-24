@@ -6,4 +6,5 @@ class Kontakt:
         self.nazwisko = nazwisko
         self.telefon = telefon
         self.email = email
-dupa
+if imie=0:
+print "imie =0"
