@@ -8,5 +8,5 @@ class Kontakt:
         self.email = email
 
 class KsiazkaTeleadresowa:
-    def __init__(self):
+    def __init__(self): #konstruktor klasy KsiazkaTeleadresowa #Tworzy listę pustą z późniejszą możliwością edycji
         self.kontakty = []
