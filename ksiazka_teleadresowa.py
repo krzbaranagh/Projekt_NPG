@@ -8,3 +8,5 @@ class Kontakt:
         self.email = email
 
 class KsiazkaTeleadresowa:
+    def __init__(self):
+        self.kontakty = []
