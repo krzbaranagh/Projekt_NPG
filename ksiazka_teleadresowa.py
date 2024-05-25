@@ -6,3 +6,5 @@ class Kontakt:
         self.nazwisko = nazwisko
         self.telefon = telefon
         self.email = email
+
+class KsiazkaTeleadresowa:
