@@ -6,3 +6,12 @@ class Kontakt:
         self.nazwisko = nazwisko
         self.telefon = telefon
         self.email = email
+
+class KsiazkaTeleadresowa:
+    def __init__(self): #konstruktor klasy KsiazkaTeleadresowa #Tworzy listę pustą z późniejszą możliwością edycji
+        self.kontakty = []
+
+
+     def dodaj_kontakt(self, kontakt):
+         self.kontakty.append(kontakt)
+    
