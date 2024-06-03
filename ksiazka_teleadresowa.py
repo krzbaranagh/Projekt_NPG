@@ -16,3 +16,7 @@ class KsiazkaTeleadresowa:
          self.kontakty.append(kontakt)
     
     def usun_kontakt(self, imie, nazwisko):
+        for kontakt in self.kontakty:
+            if kontakt.imie == imie and kontakt.nazwisko == nazwisko:
+                self.kontakty.remove(kontakt)
+                print("Kontakt usunięty pomyślnie.")
