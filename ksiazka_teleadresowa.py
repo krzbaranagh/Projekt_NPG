@@ -24,4 +24,6 @@ class KsiazkaTeleadresowa:
         print("Nie znaleziono kontaktu o podanych danych.")
 
     def wypisz(self):
+        print("Lista kontaktów: ")
         for kontakt in self.kontakty:
+            print("Nazwisko: " + nazwisko + " Imie: " + imie + " email: " + email + " telefon: " + telefon)
