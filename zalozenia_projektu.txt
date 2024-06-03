@@ -12,3 +12,7 @@ Filip ->
   2) wypisywanie całej listy kontaktów
 Kuba -> 
   1) Implenetacja GUI
+
+Po skończeniu zadania:
+  1) Dodać komentarz informujący o zakończeniu
+  2) Przesunąc odpowiednią tabliczkę na tablicy kanban w Projects
