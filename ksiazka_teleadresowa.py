@@ -20,3 +20,5 @@ class KsiazkaTeleadresowa:
             if kontakt.imie == imie and kontakt.nazwisko == nazwisko:
                 self.kontakty.remove(kontakt)
                 print("Kontakt usunięty pomyślnie.")
+                return
+        print("Nie znaleziono kontaktu o podanych danych.")
