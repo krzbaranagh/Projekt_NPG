@@ -15,3 +15,4 @@ class KsiazkaTeleadresowa:
      def dodaj_kontakt(self, kontakt):
          self.kontakty.append(kontakt)
     
+    def usun_kontakt(self, imie, nazwisko):
