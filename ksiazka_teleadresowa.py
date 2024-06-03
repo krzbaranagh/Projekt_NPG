@@ -12,8 +12,8 @@ class KsiazkaTeleadresowa:
         self.kontakty = []
 
 
-     def dodaj_kontakt(self, kontakt):
-         self.kontakty.append(kontakt)
+    def dodaj_kontakt(self, kontakt): # <--- tutaj było wcięcie zle zrobione
+        self.kontakty.append(kontakt) # i tu tez chyba 
     
     def usun_kontakt(self, imie, nazwisko):
         for kontakt in self.kontakty:
@@ -26,4 +26,14 @@ class KsiazkaTeleadresowa:
     def wypisz(self):
         print("Lista kontaktów: ")
         for kontakt in self.kontakty:
-            print("Nazwisko: " + kontakt.nazwisko + " Imie: " + kontakt.imie + " email: " + kontakt.email + " telefon: " + kontakt.telefon)
+            naz = kontakt.nazwisko
+            im = kontakt.imie
+            em = kontakt.email
+            tel = kontakt.telefon
+    
+            space1 = " "*(15 - len(naz))
+            space2 = " "*(15 - len(im))
+            space3 = " "*(30 - len(em))
+            space4 = " "*(9 - len(tel))
+
+            print("-> | Nazwisko: " + naz + space1 + " | Imie: " + im + space2 + " | Email: " + em + space3 +" | Telefon: " + tel + space4 + " |")
