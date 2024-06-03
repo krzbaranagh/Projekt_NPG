@@ -22,3 +22,6 @@ class KsiazkaTeleadresowa:
                 print("Kontakt usunięty pomyślnie.")
                 return
         print("Nie znaleziono kontaktu o podanych danych.")
+
+    def wypisz(self):
+        for kontakt in self.kontakty:
