@@ -26,4 +26,4 @@ class KsiazkaTeleadresowa:
     def wypisz(self):
         print("Lista kontaktów: ")
         for kontakt in self.kontakty:
-            print("Nazwisko: " + nazwisko + " Imie: " + imie + " email: " + email + " telefon: " + telefon)
+            print("Nazwisko: " + kontakt.nazwisko + " Imie: " + kontakt.imie + " email: " + kontakt.email + " telefon: " + kontakt.telefon)
