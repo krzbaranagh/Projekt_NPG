@@ -1,0 +1,14 @@
+Robić branche
+Nie mergować (Krzysztof to potem zrobi i sprawdzi poprawność po mergu)
+Lista zadań:
+Norbert -> 
+  1) wypisanie listy kontaktów
+  2) funkcja edycji kontaktów
+Bartek -> 
+  1) zapis/wczyt kontaktów do pliku przy wyłączeniu
+  2) Propozycja nowej funkcjonalności (taka żeby dało się łatwo napisać w jednej funkcji nwm jakieś sortowanie czy chuj wie co)
+Filip -> 
+  1) wyszukiwanie kontaktów o zadanych parametrach
+  2) wypisywanie całej listy kontaktów
+Kuba -> 
+  1) Implenetacja GUI
