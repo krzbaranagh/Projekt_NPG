@@ -87,7 +87,8 @@ class Buttoms:
     button6 = ctk.CTkButton(master=app, text="Odczytaj dane z pliku", command=load_from_file, width=200, height=50)
     button6.pack(pady=10)
 
-    switch1=CTkSwitch(master=app, text="Tryb dla dal")
+    switch1=CTkSwitch(master=app, text="Tryb dla daltonistów")
+    switch1.place(relx=0.98, rely=0.98, anchor="se")
 
 
     
