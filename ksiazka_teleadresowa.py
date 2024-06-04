@@ -1,6 +1,4 @@
-import pickle
-import customtkinter as ctk
-from customtkinter import *
+
 
 
 # class Kontakt:
@@ -16,24 +14,29 @@ from customtkinter import *
 
 
 
-
+import pickle
+import customtkinter as ctk
+from customtkinter import *
 
 app = ctk.CTk()
 
-# Ustawienia okna
 app.title("Phonebook")
-app.geometry("650x450")
+app.geometry("650x430")
 
 
 def add_contact():
-    print("Przycisk 1 został naciśnięty")
-    app1=ctk.CTk()
-    app1.title("Add contact")
-    app1.geometry("600x400")
+    new_window1=ctk.CTk()
+    new_window1.title("Dodaj kontakt")
+    new_window1.geometry("400x400")
 
-    buttonk=ctk.CTkButton(master=app1.window, text="maly maly")
-    buttonk.pack(pady=10)
-    app1.mainloop()
+    label = ctk.CTkLabel(new_window1, text="Podaj dane poniżej")
+    label.pack()
+
+  
+    new_window1.mainloop()
+
+    
+
 
 def display_contact():
     print("Przycisk 2 został naciśnięty")
@@ -63,32 +66,33 @@ def load_from_file():
 def close_application():
     app.destroy()
 
-class Buttoms:
+
+
 
     
-    button_close = ctk.CTkButton(master=app, text="Zamknij", command=close_application)
-    button_close.pack(side="top", anchor="ne", padx=10, pady=0)
+button_close = ctk.CTkButton(master=app, text="Zamknij", command=close_application, corner_radius=12)
+button_close.place(relx=1, rely=0, anchor="ne")
 
-    button1 = ctk.CTkButton(master=app, text="Dodaj kontakt", command=add_contact, width=200, height=50)
-    button1.pack(pady=10)
+button1 = ctk.CTkButton(master=app, text="Dodaj kontakt", command=add_contact, width=200, height=50, corner_radius=12)
+button1.pack(pady=10)
 
-    button2 = ctk.CTkButton(master=app, text="Wyświetl dane kontaktu", command=display_contact, width=200, height=50)
-    button2.pack(pady=10)
+button2 = ctk.CTkButton(master=app, text="Wyświetl dane kontaktu", command=display_contact, width=200, height=50, corner_radius=12)
+button2.pack(pady=10)
 
-    button3 = ctk.CTkButton(master=app, text="Edytuj kontakt", command=edit_contact, width=200, height=50)
-    button3.pack(pady=10)
+button3 = ctk.CTkButton(master=app, text="Edytuj kontakt", command=edit_contact, width=200, height=50, corner_radius=12)
+button3.pack(pady=10)
 
-    button4 = ctk.CTkButton(master=app, text="Usuń kontakt", command=delete_contact, width=200, height=50)
-    button4.pack(pady=10)
+button4 = ctk.CTkButton(master=app, text="Usuń kontakt", command=delete_contact, width=200, height=50, corner_radius=12)
+button4.pack(pady=10)
 
-    button5 = ctk.CTkButton(master=app, text="Zapisz dane do pliku", command=save_to_file, width=200, height=50)
-    button5.pack(pady=10)
+button5 = ctk.CTkButton(master=app, text="Zapisz dane do pliku", command=save_to_file, width=200, height=50, corner_radius=12)
+button5.pack(pady=10)
 
-    button6 = ctk.CTkButton(master=app, text="Odczytaj dane z pliku", command=load_from_file, width=200, height=50)
-    button6.pack(pady=10)
+button6 = ctk.CTkButton(master=app, text="Odczytaj dane z pliku", command=load_from_file, width=200, height=50, corner_radius=12)
+button6.pack(pady=10)
 
-    switch1=CTkSwitch(master=app, text="Tryb dla daltonistów")
-    switch1.place(relx=0.98, rely=0.98, anchor="se")
+switch1=CTkSwitch(master=app, text="Tryb dla daltonistów")
+switch1.place(relx=0.98, rely=0.98, anchor="se")
 
 
     
