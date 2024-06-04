@@ -3,53 +3,94 @@ import customtkinter as ctk
 from customtkinter import *
 
 
-class Kontakt:
-    def __init__(self, imie, nazwisko, telefon, email):
-        self.imie = imie
-        self.nazwisko = nazwisko
-        self.telefon = telefon
-        self.email = email
+# class Kontakt:
+#     def __init__(self, imie, nazwisko, telefon, email):
+#         self.imie = imie
+#         self.nazwisko = nazwisko
+#         self.telefon = telefon
+#         self.email = email
 
-class KsiazkaTeleadresowa:
-    def __init__(self): #konstruktor klasy KsiazkaTeleadresowa #Tworzy listę pustą z późniejszą możliwością edycji
-        self.kontakty = []
-
-
+# class KsiazkaTeleadresowa:
+#     def __init__(self): #konstruktor klasy KsiazkaTeleadresowa #Tworzy listę pustą z późniejszą możliwością edycji
+#         self.kontakty = []
 
 
 
-# Inicjalizacja aplikacji
+
+
 app = ctk.CTk()
 
 # Ustawienia okna
 app.title("Phonebook")
-app.geometry("800x600")
+app.geometry("650x450")
 
-# Funkcje przycisków
+
 def add_contact():
     print("Przycisk 1 został naciśnięty")
+    app1=ctk.CTk()
+    app1.title("Add contact")
+    app1.geometry("600x400")
+
+    buttonk=ctk.CTkButton(master=app1.window, text="maly maly")
+    buttonk.pack(pady=10)
+    app1.mainloop()
 
 def display_contact():
     print("Przycisk 2 został naciśnięty")
+    app2=ctk.CTk()
+    app2.title("Display contact")
+    app2.geometry("600x400")
 
 def edit_contact():
     print("Przycisk 3 został naciśnięty")
+    app3=ctk.CTk()
+    app3.title("Edit contact")
+    app3.geometry("600x400")
 
 def delete_contact():
     print("Przycisk 4 został naciśnięty")
+    app4=ctk.CTk()
+    app4.title("Delete contact")
+    app4.geometry("600x400")
 
-# Tworzenie przycisków
-button1 = ctk.CTkButton(master=app, text="Przycisk 1", command=add_contact, width=150, height=50)
-button1.pack(pady=10)
+def save_to_file():
+    print("ok")
 
-button2 = ctk.CTkButton(master=app, text="Przycisk 2", command=display_contact)
-button2.pack(pady=10)
+def load_from_file():
+    print("ok")
 
-button3 = ctk.CTkButton(master=app, text="Przycisk 3", command=edit_contact)
-button3.pack(pady=10)
 
-button4 = ctk.CTkButton(master=app, text="Przycisk 4", command=delete_contact)
-button4.pack(pady=10)
+def close_application():
+    app.destroy()
 
-# Uruchomienie aplikacji
+class Buttoms:
+
+    
+    button_close = ctk.CTkButton(master=app, text="Zamknij", command=close_application)
+    button_close.pack(side="top", anchor="ne", padx=10, pady=0)
+
+    button1 = ctk.CTkButton(master=app, text="Dodaj kontakt", command=add_contact, width=200, height=50)
+    button1.pack(pady=10)
+
+    button2 = ctk.CTkButton(master=app, text="Wyświetl dane kontaktu", command=display_contact, width=200, height=50)
+    button2.pack(pady=10)
+
+    button3 = ctk.CTkButton(master=app, text="Edytuj kontakt", command=edit_contact, width=200, height=50)
+    button3.pack(pady=10)
+
+    button4 = ctk.CTkButton(master=app, text="Usuń kontakt", command=delete_contact, width=200, height=50)
+    button4.pack(pady=10)
+
+    button5 = ctk.CTkButton(master=app, text="Zapisz dane do pliku", command=save_to_file, width=200, height=50)
+    button5.pack(pady=10)
+
+    button6 = ctk.CTkButton(master=app, text="Odczytaj dane z pliku", command=load_from_file, width=200, height=50)
+    button6.pack(pady=10)
+
+    switch1=CTkSwitch(master=app, text="Tryb dla dal")
+
+
+    
+
+
 app.mainloop()
