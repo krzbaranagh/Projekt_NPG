@@ -29,9 +29,21 @@ def add_contact():
     new_window1.title("Dodaj kontakt")
     new_window1.geometry("400x400")
 
-    label = ctk.CTkLabel(new_window1, text="Podaj dane poniżej")
-    label.pack()
+    label_start = ctk.CTkLabel(new_window1, text="Podaj dane poniżej")
+    label_start.pack()
 
+    label1 = ctk.CTkLabel(new_window1, text="Imię:")
+    label1.place(x=60, y=70)
+
+    label2 = ctk.CTkLabel(new_window1, text="Nazwisko:")
+    label2.place(x=60, y=130)
+
+    label3 = ctk.CTkLabel(new_window1, text="Numer telefonu:")
+    label3.place(x=60, y=190)
+
+    label4 = ctk.CTkLabel(new_window1, text="Email:")
+    label4.place(x=60, y=250)
+    
   
     new_window1.mainloop()
 
