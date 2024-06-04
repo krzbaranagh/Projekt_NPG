@@ -12,13 +12,4 @@ class KsiazkaTeleadresowa:
         self.kontakty = []
 
 
-     def dodaj_kontakt(self, kontakt):
-         self.kontakty.append(kontakt)
-    
-    def usun_kontakt(self, imie, nazwisko):
-        for kontakt in self.kontakty:
-            if kontakt.imie == imie and kontakt.nazwisko == nazwisko:
-                self.kontakty.remove(kontakt)
-                print("Kontakt usunięty pomyślnie.")
-                return
-        print("Nie znaleziono kontaktu o podanych danych.")
+
