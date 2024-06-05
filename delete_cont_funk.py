@@ -12,7 +12,7 @@ def delete_contact():
 
 
     delete_contact_window=ctk.CTk()
-    delete_contact_window.title("Display contact")
+    delete_contact_window.title("Delete contact")
     delete_contact_window.geometry("400x150")
 
 
