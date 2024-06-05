@@ -115,7 +115,7 @@ def close_window_and_confirm_data():
 
 
     
-button_close = ctk.CTkButton(master=app, text="Zamknij", command=close_app, corner_radius=12)
+button_close = ctk.CTkButton(master=app, text="Zamknij", command=close_app, corner_radius=12, fg_color="#a51b0b")
 button_close.place(relx=1, rely=0, anchor="ne")
 
 button1 = ctk.CTkButton(master=app, text="Dodaj kontakt", command=add_contact, width=200, height=50, corner_radius=12)
