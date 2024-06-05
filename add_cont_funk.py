@@ -34,16 +34,16 @@ def add_contact():
 
 
     name_entry=CTkEntry(master=add_contact_window, placeholder_text="Start typing...", width=200, text_color="#FFCC70")
-    name_entry.place(x=130, y=70)
+    name_entry.place(x=140, y=70)
 
     surname_entry=CTkEntry(master=add_contact_window, placeholder_text="Start typing...", width=200, text_color="#FFCC70")
-    surname_entry.place(x=130, y=130)
+    surname_entry.place(x=140, y=130)
 
     phone_entry=CTkEntry(master=add_contact_window, placeholder_text="Start typing...", width=200, text_color="#FFCC70")
-    phone_entry.place(x=130, y=190)
+    phone_entry.place(x=140, y=190)
 
     email_entry=CTkEntry(master=add_contact_window, placeholder_text="Start typing...", width=200, text_color="#FFCC70")
-    email_entry.place(x=130, y=250)
+    email_entry.place(x=140, y=250)
 
     button_confirm=CTkButton(master=add_contact_window, text="Zatwierdź", command=save_data_close_window, corner_radius=12)
     button_confirm.place(relx=0.98, rely=0.98, anchor="se")
