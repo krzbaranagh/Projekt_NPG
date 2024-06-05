@@ -8,3 +8,10 @@ class Kontakt:
         self.email = email
 if imie=0:
 print "imie =0"
+class KsiazkaTeleadresowa:
+    def __init__(self):
+        self.kontakty = []
+def zapisz_do_pliku(self, nazwa_pliku):
+        with open(nazwa_pliku, 'wb') as plik:
+            pickle.dump(self.kontakty, plik)
+        print("Kontakty zostały zapisane do pliku.")
