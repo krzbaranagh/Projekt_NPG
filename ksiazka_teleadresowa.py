@@ -25,6 +25,11 @@ app.geometry("650x430")
 
 
 def add_contact():
+
+
+    def close_new_window1():
+        new_window1.destroy()
+
     new_window1=ctk.CTk()
     new_window1.title("Dodaj kontakt")
     new_window1.geometry("400x400")
@@ -38,16 +43,37 @@ def add_contact():
     label2 = ctk.CTkLabel(new_window1, text="Nazwisko:")
     label2.place(x=60, y=130)
 
-    label3 = ctk.CTkLabel(new_window1, text="Numer telefonu:")
+    label3 = ctk.CTkLabel(new_window1, text="Numer tel:")
     label3.place(x=60, y=190)
 
     label4 = ctk.CTkLabel(new_window1, text="Email:")
     label4.place(x=60, y=250)
+
+
+    entry1=CTkEntry(master=new_window1, placeholder_text="Start typing...", width=200, text_color="#FFCC70")
+    entry1.place(x=130, y=70)
+
+    entry2=CTkEntry(master=new_window1, placeholder_text="Start typing...", width=200, text_color="#FFCC70")
+    entry2.place(x=130, y=130)
+
+    entry3=CTkEntry(master=new_window1, placeholder_text="Start typing...", width=200, text_color="#FFCC70")
+    entry3.place(x=130, y=190)
+
+    entry4=CTkEntry(master=new_window1, placeholder_text="Start typing...", width=200, text_color="#FFCC70")
+    entry4.place(x=130, y=250)
+
+    button_confirm=CTkButton(master=new_window1, text="Zatwierdź", command=close_window_and_confirm_data, corner_radius=12)
+    button_confirm.place(relx=0.98, rely=0.98, anchor="se")
     
-  
+
+    button_cancel=CTkButton(master=new_window1, text="Anuluj", command=close_new_window1, corner_radius=12)
+    button_cancel.place(relx=0.02, rely=0.98, anchor="sw")
+
     new_window1.mainloop()
 
     
+
+#button_close.place(relx=1, rely=0, anchor="ne")    
 
 
 def display_contact():
@@ -75,14 +101,21 @@ def load_from_file():
     print("ok")
 
 
-def close_application():
+def close_app():
     app.destroy()
 
 
 
 
+
+
+def close_window_and_confirm_data():
+    print("ok")
+
+
+
     
-button_close = ctk.CTkButton(master=app, text="Zamknij", command=close_application, corner_radius=12)
+button_close = ctk.CTkButton(master=app, text="Zamknij", command=close_app, corner_radius=12)
 button_close.place(relx=1, rely=0, anchor="ne")
 
 button1 = ctk.CTkButton(master=app, text="Dodaj kontakt", command=add_contact, width=200, height=50, corner_radius=12)
