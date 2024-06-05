@@ -13,8 +13,10 @@ def display_contact():
         choose_contact_window.destroy()
 
         display_contact_window=ctk.CTk()
+        display_contact_window.resizable(False, False)
         display_contact_window.title("Dane kontaktu")
         display_contact_window.geometry("320x295")
+        
 
 
 
@@ -50,11 +52,12 @@ def display_contact():
 
         display_contact_window.mainloop()
 
-    print("Przycisk 2 został naciśnięty")
+    
     choose_contact_window=ctk.CTk()
+    choose_contact_window.resizable(False, False)
     choose_contact_window.title("Display contact")
     choose_contact_window.geometry("400x150")
-
+    choose_contact_window.resizable(False, False)
 
     label_start = ctk.CTkLabel(choose_contact_window, text="Kogo dane chcesz zobaczyć ?")
     label_start.pack(pady=10)

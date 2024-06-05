@@ -12,8 +12,10 @@ def delete_contact():
 
 
     delete_contact_window=ctk.CTk()
+    delete_contact_window.resizable(False, False)
     delete_contact_window.title("Delete contact")
     delete_contact_window.geometry("400x150")
+    
 
 
     label_start = ctk.CTkLabel(delete_contact_window, text="Kogo dane chcesz zobaczyć ?")

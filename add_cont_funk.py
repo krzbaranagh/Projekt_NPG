@@ -14,10 +14,12 @@ def add_contact():
         #dodanie kontaktu do bazy 
         add_contact_window.destroy()
     
-
+    
     add_contact_window=ctk.CTk()
+    add_contact_window.resizable(False, False)
     add_contact_window.title("Dodaj kontakt")
     add_contact_window.geometry("400x400")
+    
 
     label_start = ctk.CTkLabel(add_contact_window, text="Podaj dane poniżej")
     label_start.pack()
