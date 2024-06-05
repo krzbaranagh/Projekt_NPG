@@ -80,19 +80,19 @@ def display_contact():
     print("Przycisk 2 został naciśnięty")
     app2=ctk.CTk()
     app2.title("Display contact")
-    app2.geometry("600x400")
+    app2.geometry("400x400")
 
 def edit_contact():
     print("Przycisk 3 został naciśnięty")
     app3=ctk.CTk()
     app3.title("Edit contact")
-    app3.geometry("600x400")
+    app3.geometry("400x400")
 
 def delete_contact():
     print("Przycisk 4 został naciśnięty")
     app4=ctk.CTk()
     app4.title("Delete contact")
-    app4.geometry("600x400")
+    app4.geometry("400x400")
 
 def save_to_file():
     print("ok")
