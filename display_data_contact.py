@@ -8,7 +8,7 @@ from customtkinter import *
 def display_contact():
 
 
-    def confirm():   #funkcja która zatwierdza się wybrany kontakt z checklisty. zamyka to okno i otwiera nowe z wypisanymi danymi
+    def confirm_and_display():   #funkcja która zatwierdza się wybrany kontakt z checklisty. zamyka to okno i otwiera nowe z wypisanymi danymi
         print("ok") 
         choose_contact_window.destroy()
 
@@ -65,7 +65,7 @@ def display_contact():
     contact_choice=CTkComboBox(master=choose_contact_window, values=["option 1", "option 2", "option 3"])
     contact_choice.pack(pady=10)
 
-    button_confirm=CTkButton(master=choose_contact_window, text="Zatwierdź", corner_radius=12, command=confirm)
+    button_confirm=CTkButton(master=choose_contact_window, text="Zatwierdź", corner_radius=12, command=confirm_and_display)
     button_confirm.place(relx=0.99, rely=0.96, anchor="se")
 
 

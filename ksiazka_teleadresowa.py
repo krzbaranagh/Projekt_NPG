@@ -1,19 +1,3 @@
-class Kontakt:
-    def __init__(self, imie, nazwisko, telefon, email):
-        self.imie = imie
-        self.nazwisko = nazwisko
-        self.telefon = telefon
-        self.email = email
-
-class KsiazkaTeleadresowa:
-    def __init__(self): 
-        self.kontakty = []
-
-
-janek = Kontakt("Jan", "Kowalski", "123456789", "jan.kowalski@example.com")
-maciek = Kontakt("Maciek", "Zuczek", "564957341", "maciekzuczek@wp.pl")
-
-
 import pickle
 import customtkinter as ctk
 from customtkinter import *
@@ -21,6 +5,7 @@ from customtkinter import *
 import add_cont_funk
 import display_data_contact
 import delete_cont_funk
+import edit_contact_funk
 
 main_window = ctk.CTk()
 main_window.title("Phonebook")
@@ -28,14 +13,6 @@ main_window.geometry("650x430")
 main_window.resizable(False, False)
 
 
-
-
-
-def edit_contact():
-    print("Przycisk 3 został naciśnięty")
-    main_window3=ctk.CTk()
-    main_window3.title("Edit contact")
-    main_window3.geometry("400x400")
 
 
 
@@ -66,7 +43,7 @@ add_contact_button.pack(pady=10)
 display_contact_button = ctk.CTkButton(master=main_window, text="Wyświetl dane kontaktu", command=display_data_contact.display_contact, width=200, height=50, corner_radius=12)
 display_contact_button.pack(pady=10)
 
-edit_contact_button = ctk.CTkButton(master=main_window, text="Edytuj kontakt", command=edit_contact, width=200, height=50, corner_radius=12)
+edit_contact_button = ctk.CTkButton(master=main_window, text="Edytuj kontakt", command=edit_contact_funk.edit_contact, width=200, height=50, corner_radius=12)
 edit_contact_button.pack(pady=10)
 
 delete_contact_button = ctk.CTkButton(master=main_window, text="Usuń kontakt", command=delete_cont_funk.delete_contact, width=200, height=50, corner_radius=12)
