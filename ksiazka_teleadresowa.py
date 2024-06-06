@@ -22,3 +22,10 @@ class KsiazkaTeleadresowa:
                 print("Kontakt usunięty pomyślnie.")
                 return
         print("Nie znaleziono kontaktu o podanych danych.")
+    def funkcja_wyszukaj_kontakt(self, imie, nazwisko):
+        for kontakt in self.kontakty:
+            if kontakt.imie == imie and kontakt.nazwisko == nazwisko:
+                print("Imię:", kontakt.imie, "Nazwisko:", kontakt.nazwisko)
+                print("") #do późniejszej zmiany
+            else:
+                print("Znie znalezniono dopasowania.")
