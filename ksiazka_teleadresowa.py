@@ -25,6 +25,7 @@ import delete_cont_funk
 main_window = ctk.CTk()
 main_window.title("Phonebook")
 main_window.geometry("650x430")
+main_window.resizable(False, False)
 
 
 
