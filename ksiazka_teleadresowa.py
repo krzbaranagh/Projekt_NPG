@@ -7,10 +7,11 @@ import display_data_contact
 import delete_cont_funk
 import edit_contact_funk
 
+
 main_window = ctk.CTk()
+main_window.resizable(False, False)
 main_window.title("Phonebook")
 main_window.geometry("650x430")
-main_window.resizable(False, False)
 
 
 

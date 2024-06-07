@@ -10,5 +10,7 @@ class KsiazkaTeleadresowa:
         self.kontakty = []
 
 
+Kontakt("Tomek", "Jajko", 543654564, "tomekjajko@gmail.com")
 
 #tutaj gdzies mają być przechowywane obiekty
+

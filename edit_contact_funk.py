@@ -8,6 +8,26 @@ def edit_contact():
 
     def confirm_and_edit():
         choose_contact_window.destroy()
+
+        edit_contact_window=ctk.CTk()
+        edit_contact_window.resizable(False, False)
+        edit_contact_window.title("Edit contact")
+        edit_contact_window.geometry("320x295")
+
+
+
+        name_label = ctk.CTkLabel(edit_contact_window, text="Imię:")
+        name_label.place(x=60, y=20)
+
+        surname_label = ctk.CTkLabel(edit_contact_window, text="Nazwisko:")
+        surname_label.place(x=60, y=80)
+
+        phone_label = ctk.CTkLabel(edit_contact_window, text="Numer tel:")
+        phone_label.place(x=60, y=140)
+
+        email_label = ctk.CTkLabel(edit_contact_window, text="Email:")
+        email_label.place(x=60, y=200)
+
         
 
 
