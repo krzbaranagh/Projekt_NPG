@@ -15,8 +15,6 @@ main_window.geometry("650x430")
 
 
 
-
-
 def save_to_file():
     print("ok")
 
