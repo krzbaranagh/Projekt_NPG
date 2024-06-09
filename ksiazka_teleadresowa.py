@@ -22,10 +22,14 @@ class KsiazkaTeleadresowa:
                 print("Kontakt usunięty pomyślnie.")
                 return
         print("Nie znaleziono kontaktu o podanych danych.")
-    def funkcja_wyszukaj_kontakt(self, imie, nazwisko):
+
+    def funkcja_wyszukaj_kontakt(self, imie, nazwisko) -> None:
         for kontakt in self.kontakty:
             if kontakt.imie == imie and kontakt.nazwisko == nazwisko:
-                print("Imię:", kontakt.imie, "Nazwisko:", kontakt.nazwisko)
-                print("") #do późniejszej zmiany
+                print(f"Imię i Nazwisko: {kontakt.imie} {kontakt.nazwisko}")
+                print(f"Telefon: {kontakt.telefon}")
+                print(f"Email: {kontakt.email}")    #robimy type hinting czy nie?
+                return None
             else:
                 print("Znie znalezniono dopasowania.")
+                return None
