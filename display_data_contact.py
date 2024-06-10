@@ -3,6 +3,7 @@ import customtkinter as ctk
 from customtkinter import *
 from data_contact import *
 
+
 def display_contact(): 
     
     obiekt : Kontakt
@@ -10,20 +11,22 @@ def display_contact():
 
     if niepusta: 
         obiekt = Ksiazka.kontakty[0]
-        slownik = {(adres.imie +" "+ adres.nazwisko):adres for adres in Ksiazka.kontakty}
-        lista = [adres.imie +" "+ adres.nazwisko for adres in Ksiazka.kontakty]
+        slownik = {(adres.imie + " " + adres.nazwisko) :adres for adres in Ksiazka.kontakty}
+        lista = [adres.imie + " " + adres.nazwisko for adres in Ksiazka.kontakty]
     else:
         lista = ["Brak kontaktów"]
+
+
+    def set_value(wybor): 
+        nonlocal obiekt
+        obiekt = slownik[wybor]
 
     def close_display_contact_window():
         choose_contact_window.destroy()
 
-    def set_value(wybor):
-        nonlocal obiekt
-        obiekt = slownik[wybor]
 
-    def display():   #funkcja która zatwierdza się wybrany kontakt z checklisty. zamyka to okno i otwiera nowe z wypisanymi danymi
-        print("ok")
+
+    def display():   #funkcja którą zatwierdza się wybrany kontakt z checklisty. zamyka to okno i otwiera nowe z wypisanymi danymi
         choose_contact_window.destroy()
 
         display_contact_window=ctk.CTk()
@@ -75,7 +78,7 @@ def display_contact():
     contact_choice=CTkComboBox(master=choose_contact_window, values=lista ,command= set_value if niepusta else None)
     contact_choice.pack(pady=10)
 
-    button_confirm=CTkButton(master=choose_contact_window, text="Zatwierdź", corner_radius=12, command= display if niepusta else None)
+    button_confirm=CTkButton(master=choose_contact_window, text="Zatwierdź", corner_radius=12, command= display if niepusta else close_display_contact_window)
     button_confirm.place(relx=0.98, rely=0.96, anchor="se")
 
     button_cancel=CTkButton(master=choose_contact_window, text="Anuluj", command=close_display_contact_window, corner_radius=12)

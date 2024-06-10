@@ -11,8 +11,10 @@ def add_contact():
 
     def save_data_close_window():
         print("ok")
-        #dodanie kontaktu do bazy 
         add_contact_window.destroy()
+        #dodanie kontaktu do bazy 
+        
+        
     
     
     add_contact_window=ctk.CTk()
