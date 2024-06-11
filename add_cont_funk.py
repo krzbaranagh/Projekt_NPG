@@ -1,6 +1,8 @@
 import pickle
 import customtkinter as ctk
 from customtkinter import *
+from data_contact import *
+
 
 
 def add_contact():
@@ -10,9 +12,27 @@ def add_contact():
         add_contact_window.destroy()
 
     def save_data_close_window():
-        print("ok")
-        add_contact_window.destroy()
-        #dodanie kontaktu do bazy 
+
+
+        name=name_entry.get()
+        surname=surname_entry.get()
+        phone=phone_entry.get()
+        email=email_entry.get()
+
+        if len(name)!=0 and len(surname)!=0 and len(phone)!=0 and len(email)!=0:
+            nowy_kontakt=Kontakt(name, surname, phone, email)
+            Ksiazka.dodaj_kontakt(nowy_kontakt)
+            add_contact_window.destroy()
+
+        
+            
+            
+
+
+
+
+        
+        
         
         
     
