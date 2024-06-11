@@ -1,4 +1,3 @@
-import pickle
 import customtkinter as ctk
 from customtkinter import *
 
@@ -24,8 +23,6 @@ def load_from_file():
 
 
 
-
-    
 button_close = ctk.CTkButton(master=main_window, text="Zamknij", command=main_window.destroy, corner_radius=12, fg_color="#a51b0b")
 button_close.place(relx=0.98, rely=0.02, anchor="ne")
 

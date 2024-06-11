@@ -1,4 +1,3 @@
-import pickle
 import customtkinter as ctk
 from customtkinter import *
 from data_contact import *
