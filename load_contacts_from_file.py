@@ -22,6 +22,23 @@ def show_confirmation_window():
 
     confirmation_window.mainloop()
 
+def show_error_window():
+        
+    error_window = ctk.CTk()
+    error_window.geometry("300x100")
+    error_window.title("Odmowa")
+
+    label = ctk.CTkLabel(error_window, text="Brak odpowiedniego pliku to zapisu kontaktów")
+    label.pack(pady=10)
+
+    def close_window():
+        error_window.destroy()
+
+    ok_button = ctk.CTkButton(error_window, text="OK", command=close_window)
+    ok_button.pack(pady=10)
+
+    error_window.mainloop()
+
 def load_contacts_from_txt(ksiazka):
     current_dir = os.path.dirname(os.path.abspath(__file__)) #ustalanie bieżącego katalogu
     file_path = os.path.join(current_dir, 'contacts_to_load.txt')    #znajdowanie pliku z kontaktami
