@@ -12,3 +12,11 @@ def load_contacts_from_txt(ksiazka):
     if not os.path.exists(file_path):
         print(f"Plik {file_path} nie istnieje.")
         return
+
+    with open(file_path, 'r') as plik:
+        for linia in plik:
+            imie, nazwisko, telefon, email = linia.strip().split(', ')
+            kontakt = data_contact.Kontakt(imie, nazwisko, telefon, email)
+            ksiazka.kontakty.append(kontakt)
+    
+    print(f"Kontakty zostały wczytane z pliku {file_path}")
