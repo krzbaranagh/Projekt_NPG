@@ -19,22 +19,25 @@ def add_contact():
         phone=phone_entry.get()
         email=email_entry.get()
 
-        if len(name)!=0 and len(surname)!=0 and len(phone)!=0 and len(email)!=0:
+        if len(name)!=0 and len(surname)!=0 and len(phone)==9 and '@' in email:
             nowy_kontakt=Kontakt(name, surname, phone, email)
             Ksiazka.dodaj_kontakt(nowy_kontakt)
             add_contact_window.destroy()
 
+        else:
+            error_window=ctk.CTk()
+            error_window.resizable(False, False)
+            error_window.title("Błąd")
+            error_window.geometry("225x85")
+            label_error = ctk.CTkLabel(error_window, text="Wpisz poprawnie dane")
+            label_error.place(relx=0.5, rely=0.1, anchor="n")
+
+            button_confirm=CTkButton(master=error_window, text="Zatwierdź", command=error_window.destroy, corner_radius=12)
+            button_confirm.place(relx=0.97, rely=0.93, anchor="se")
+
         
             
-            
-
-
-
-
-        
-        
-        
-        
+    
     
     
     add_contact_window=ctk.CTk()
