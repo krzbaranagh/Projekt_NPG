@@ -2,7 +2,6 @@ import pickle
 import os
 import customtkinter as ctk
 from customtkinter import *
-
 from data_contact import *
 
 def show_confirmation_window():
@@ -11,7 +10,7 @@ def show_confirmation_window():
     confirmation_window.geometry("300x100")
     confirmation_window.title("Potwierdzenie")
 
-    label = ctk.CTkLabel(confirmation_window, text="Pomyślnie zapisano kontakty do pliku")
+    label = ctk.CTkLabel(confirmation_window, text="Pomyślnie wczytano kontakty")
     label.pack(pady=10)
 
     def close_window():
@@ -28,7 +27,7 @@ def show_error_window():
     error_window.geometry("300x100")
     error_window.title("Odmowa")
 
-    label = ctk.CTkLabel(error_window, text="Brak odpowiedniego pliku to zapisu kontaktów")
+    label = ctk.CTkLabel(error_window, text="Brak odpowiedniego pliku do wczytu kontaktów")
     label.pack(pady=10)
 
     def close_window():
@@ -39,18 +38,20 @@ def show_error_window():
 
     error_window.mainloop()
 
-def load_contacts_from_txt(ksiazka):
-    current_dir = os.path.dirname(os.path.abspath(__file__)) #ustalanie bieżącego katalogu
-    file_path = os.path.join(current_dir, 'contacts_to_load.txt')    #znajdowanie pliku z kontaktami
+
+def load_contacts_from_txt():
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(current_dir, 'contacts_to_load.txt')
 
     if not os.path.exists(file_path):
-        print(f"Plik {file_path} nie istnieje.")
+        show_error_window()
         return
-
+    
     with open(file_path, 'r') as plik:
         for linia in plik:
-            imie, nazwisko, telefon, email = linia.strip().split(', ')
-            kontakt = data_contact.Kontakt(imie, nazwisko, telefon, email)
-            ksiazka.kontakty.append(kontakt)
+            imie, nazwisko, telefon, email = linia.strip().split(' ')
+            kontakt = Kontakt(imie, nazwisko, telefon, email)
+            Ksiazka.kontakty.append(kontakt)
     
-    print(f"Kontakty zostały wczytane z pliku {file_path}")
+    show_confirmation_window()
