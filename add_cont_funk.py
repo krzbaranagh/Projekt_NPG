@@ -19,18 +19,44 @@ def add_contact():
         phone=phone_entry.get()
         email=email_entry.get()
 
-        if len(name)!=0 and len(surname)!=0 and len(phone)==9 and '@' in email:
+        if len(name)!=0 and len(surname)!=0 and len(phone)==9 and len(email)!=0 and '@' in email:
+            
             nowy_kontakt=Kontakt(name, surname, phone, email)
             Ksiazka.dodaj_kontakt(nowy_kontakt)
             add_contact_window.destroy()
 
         else:
+            
+            if len(name)==0 or len(surname)==0 or len(phone)==0 or len(email)==0:
+                statement1="Wszystkie pola muszą zostać wypełnione"
+                statement2=""
+
+            elif len(phone)!=9 and '@' not in email:
+                statement1="Numer powinien składa się z 9 cyfr"
+                statement2="Email musi zawierać @"
+
+            elif len(phone)!=9 :
+                statement1="Numer składa się z 9 cyfr"
+                statement2=""
+
+            elif '@' not in email:
+                statement1="Email musi zawierać @"
+                statement2=""
+                
+
+
+
             error_window=ctk.CTk()
             error_window.resizable(False, False)
             error_window.title("Błąd")
-            error_window.geometry("225x85")
-            label_error = ctk.CTkLabel(error_window, text="Wpisz poprawnie dane")
-            label_error.place(relx=0.5, rely=0.1, anchor="n")
+            error_window.geometry("300x110")
+        
+
+            label_error1 = ctk.CTkLabel(error_window, text=statement1)
+            label_error1.place(relx=0.5, rely=0.1, anchor="n")
+
+            label_error2 = ctk.CTkLabel(error_window, text=statement2)
+            label_error2.place(relx=0.5, rely=0.3, anchor="n")
 
             button_confirm=CTkButton(master=error_window, text="Zatwierdź", command=error_window.destroy, corner_radius=12)
             button_confirm.place(relx=0.97, rely=0.93, anchor="se")
