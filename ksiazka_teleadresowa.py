@@ -23,17 +23,10 @@ def load_from_file():
     print("ok")
 
 
-def close_main_window():
-    main_window.destroy()
-
-
-def close_window_and_confirm_data():
-    print("ok")
-
 
 
     
-button_close = ctk.CTkButton(master=main_window, text="Zamknij", command=close_main_window, corner_radius=12, fg_color="#a51b0b")
+button_close = ctk.CTkButton(master=main_window, text="Zamknij", command=main_window.destroy, corner_radius=12, fg_color="#a51b0b")
 button_close.place(relx=0.98, rely=0.02, anchor="ne")
 
 add_contact_button = ctk.CTkButton(master=main_window, text="Dodaj kontakt", command=add_cont_funk.add_contact, width=200, height=50, corner_radius=12)
