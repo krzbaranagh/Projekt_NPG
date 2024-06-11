@@ -8,3 +8,7 @@ import data_contact
 def save_contacts_to_file(ksiazka):
     current_dir = os.path.dirname(os.path.abspath(__file__)) #ustalanie bieżącego katalogu
     file_path = os.path.join(current_dir, 'kontakty.txt') #znajdowanie pliku do którego będą zapisywane kontakty
+
+    if not os.path.exists(file_path):
+        print(f"Plik {file_path} nie istnieje.")
+        return
