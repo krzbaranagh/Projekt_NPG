@@ -10,6 +10,7 @@ def delete_contact():
     if niepusta: 
         
         lista = [adres.imie + " " + adres.nazwisko for adres in Ksiazka.kontakty]
+        obiekt=Ksiazka.kontakty[0]
     else:
         lista = ["Brak kontaktów"]
     def wybor_kontaktu(wybor):
@@ -17,9 +18,10 @@ def delete_contact():
         for x in Ksiazka.kontakty:
             if x.imie + " " + x.nazwisko == wybor:
                 obiekt = x
-        
+                print("wykonalo")
     def delete_and_close_window():
         if obiekt in Ksiazka.kontakty:
+            print("jest")
             Ksiazka.kontakty.remove(obiekt)
         delete_contact_window.destroy()
         
@@ -30,7 +32,7 @@ def delete_contact():
     
 
 
-    label_start = ctk.CTkLabel(delete_contact_window, text="Kogo dane chcesz zobaczyć ?")
+    label_start = ctk.CTkLabel(delete_contact_window, text="Który kontakt chcesz usunąć ?")
     label_start.pack(pady=10)
 
     contact_choice=CTkComboBox(master=delete_contact_window, values=lista, command = wybor_kontaktu)
@@ -38,6 +40,9 @@ def delete_contact():
 
     button_confirm=CTkButton(master=delete_contact_window, text="Zatwierdź", corner_radius=12, command=delete_and_close_window)
     button_confirm.place(relx=0.99, rely=0.96, anchor="se")
+
+
+
 
 
     delete_contact_window.mainloop()
