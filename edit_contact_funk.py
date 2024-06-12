@@ -29,13 +29,37 @@ def edit_contact():
 
 
         def save_changes_and_close_window():
-            #edycja kontaktu w bazie 
+            
+            name=name_entry.get()
+            surname=surname_entry.get()
+            phone=phone_entry.get()
+            email=email_entry.get()
+
+            data={
+                'imie':name,
+                'nazwisko':surname,
+                'telefon':phone,
+                'email':email
+            }
+
+            for element, value in data.items():
+                if len(value)!=0:
+                    element=setattr(obiekt, element, value)
+
+            
+            # obiekt.imie=name
+            # obiekt.nazwisko=surname
+            # obiekt.telefon=phone
+            # obiekt.email=email
+
+            # print(obiekt.imie)
+            # print(obiekt.nazwisko)
+            # print(obiekt.telefon)
+            # print(obiekt.email)
+
             edit_contact_window.destroy()
             
             
-
-
-
 
         
 
