@@ -17,10 +17,9 @@ def delete_contact():
         for x in Ksiazka.kontakty:
             if x.imie + " " + x.nazwisko == wybor:
                 obiekt = x
-                print("wykonalo")
+        
     def delete_and_close_window():
         if obiekt in Ksiazka.kontakty:
-            print("jest")
             Ksiazka.kontakty.remove(obiekt)
         delete_contact_window.destroy()
         
