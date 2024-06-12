@@ -19,7 +19,6 @@ def delete_contact():
                 obiekt = x
                 print("wykonalo")
     def delete_and_close_window():
-        #wyjebanie kontaktu
         if obiekt in Ksiazka.kontakty:
             print("jest")
             Ksiazka.kontakty.remove(obiekt)
@@ -41,8 +40,5 @@ def delete_contact():
     button_confirm=CTkButton(master=delete_contact_window, text="Zatwierdź", corner_radius=12, command=delete_and_close_window)
     button_confirm.place(relx=0.99, rely=0.96, anchor="se")
 
-
-
-#d
 
     delete_contact_window.mainloop()
