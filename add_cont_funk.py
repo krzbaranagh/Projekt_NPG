@@ -60,6 +60,8 @@ def add_contact():
             button_confirm=CTkButton(master=error_window, text="Zatwierdź", command=error_window.destroy, corner_radius=12)
             button_confirm.place(relx=0.97, rely=0.93, anchor="se")
 
+            error_window.mainloop()
+
         
             
     

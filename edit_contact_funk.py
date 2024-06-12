@@ -75,6 +75,8 @@ def edit_contact():
 
         button_confirm=CTkButton(master=edit_contact_window, text="Zatwierdź", command=save_changes_and_close_window, corner_radius=12)
         button_confirm.place(relx=0.98, rely=0.98, anchor="se")
+
+        edit_contact_window.mainloop()
         
 
 
@@ -92,3 +94,5 @@ def edit_contact():
 
     button_confirm=CTkButton(master=choose_contact_window, text="Zatwierdź", corner_radius=12, command=confirm_and_edit)
     button_confirm.place(relx=0.99, rely=0.96, anchor="se")
+
+    choose_contact_window.mainloop()
