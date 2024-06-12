@@ -8,17 +8,21 @@ def delete_contact():
     niepusta : bool = len(Ksiazka.kontakty) != 0
 
     if niepusta: 
-        obiekt = Ksiazka.kontakty[0]
+        
         lista = [adres.imie + " " + adres.nazwisko for adres in Ksiazka.kontakty]
     else:
         lista = ["Brak kontaktów"]
     def wybor_kontaktu(wybor):
         nonlocal obiekt
-        obiekt = Ksiazka.kontakty[wybor]
-
+        for x in Ksiazka.kontakty:
+            if x.imie + " " + x.nazwisko == wybor:
+                obiekt = x
+                print("wykonalo")
     def delete_and_close_window():
         #wyjebanie kontaktu
-        del obiekt
+        if obiekt in Ksiazka.kontakty:
+            print("jest")
+            Ksiazka.kontakty.remove(obiekt)
         delete_contact_window.destroy()
         
     delete_contact_window=ctk.CTk()
