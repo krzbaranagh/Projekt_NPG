@@ -50,5 +50,4 @@ dalton_switch.place(relx=0.98, rely=0.98, anchor="se")
 
     
 
-
 main_window.mainloop()
