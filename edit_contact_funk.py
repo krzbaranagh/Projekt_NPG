@@ -39,23 +39,13 @@ def edit_contact():
                 'imie':name,
                 'nazwisko':surname,
                 'telefon':phone,
-                'email':email
-            }
+                'email':email }
 
             for element, value in data.items():
                 if len(value)!=0:
                     element=setattr(obiekt, element, value)
 
-            
-            # obiekt.imie=name
-            # obiekt.nazwisko=surname
-            # obiekt.telefon=phone
-            # obiekt.email=email
 
-            # print(obiekt.imie)
-            # print(obiekt.nazwisko)
-            # print(obiekt.telefon)
-            # print(obiekt.email)
 
             edit_contact_window.destroy()
             
