@@ -26,7 +26,7 @@ def display_contact():
 
 
 
-    def display():   #funkcja którą zatwierdza się wybrany kontakt z checklisty. zamyka to okno i otwiera nowe z wypisanymi danymi
+    def display():   
         choose_contact_window.destroy()
 
         display_contact_window=ctk.CTk()
@@ -53,7 +53,7 @@ def display_contact():
         value_surname_label = ctk.CTkLabel(display_contact_window, text=obiekt.nazwisko)
         value_surname_label.place(x=130, y=80)
 
-        value_phone_label = ctk.CTkLabel(display_contact_window, text=obiekt.telefon)
+        value_phone_label = ctk.CTkLabel(display_contact_window, text=(obiekt.telefon[0:3]+"-"+obiekt.telefon[3:6]+"-"+obiekt.telefon[6:9]))
         value_phone_label.place(x=130, y=140)
 
         value_email_label = ctk.CTkLabel(display_contact_window, text=obiekt.email)
