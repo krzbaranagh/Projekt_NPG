@@ -2,6 +2,7 @@ import pickle
 import os
 import customtkinter as ctk
 from customtkinter import *
+import data_variable
 
 from data_contact import *
 
@@ -20,6 +21,11 @@ def show_confirmation_window():
     ok_button = ctk.CTkButton(confirmation_window, text="OK", command=close_window)
     ok_button.pack(pady=10)
 
+    if data_variable.DaltonMode:
+        ok_button.configure(fg_color="#1f6aa5", hover_color="#144870")
+    else:
+        ok_button.configure(fg_color="#FF4500",hover_color="#FF6347")
+
     confirmation_window.mainloop()
 
 def show_error_window():
@@ -36,6 +42,11 @@ def show_error_window():
 
     ok_button = ctk.CTkButton(error_window, text="OK", command=close_window)
     ok_button.pack(pady=10)
+
+    if data_variable.DaltonMode:
+        ok_button.configure(fg_color="#1f6aa5", hover_color="#144870")
+    else:
+        ok_button.configure(fg_color="#FF4500",hover_color="#FF6347")
 
     error_window.mainloop()
 
