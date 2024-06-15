@@ -2,7 +2,7 @@ import pickle
 import customtkinter as ctk
 from customtkinter import *
 from data_contact import *
-
+import data_variable
 
 
 def add_contact():
@@ -61,13 +61,13 @@ def add_contact():
             button_confirm=CTkButton(master=error_window, text="Zatwierdź", command=error_window.destroy, corner_radius=12)
             button_confirm.place(relx=0.97, rely=0.93, anchor="se")
 
+            if data_variable.DaltonMode: 
+                button_confirm.configure(fg_color="#1f6aa5", hover_color="#144870")
+            else: 
+                button_confirm.configure(fg_color="#FF4500",hover_color="#FF6347")
+
             error_window.mainloop()
 
-        
-            
-    
-    
-    
     add_contact_window=ctk.CTk()
     add_contact_window.resizable(False, False)
     add_contact_window.title("Dodaj kontakt")
@@ -108,5 +108,13 @@ def add_contact():
 
     button_cancel=CTkButton(master=add_contact_window, text="Anuluj", command=close_add_contact_window, corner_radius=12)
     button_cancel.place(relx=0.02, rely=0.98, anchor="sw")
+
+    if data_variable.DaltonMode: 
+        button_cancel.configure(fg_color="#1f6aa5", hover_color="#144870")
+        button_confirm.configure(fg_color="#1f6aa5", hover_color="#144870")
+    else: 
+        button_cancel.configure(fg_color="#FF4500",hover_color="#FF6347")
+        button_confirm.configure(fg_color="#FF4500",hover_color="#FF6347")
+        
 
     add_contact_window.mainloop()

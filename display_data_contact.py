@@ -2,10 +2,9 @@ import pickle
 import customtkinter as ctk
 from customtkinter import *
 from data_contact import *
+import data_variable
 
-
-def display_contact(): 
-    
+def display_contact():   
     obiekt : Kontakt
     niepusta : bool = len(Ksiazka.kontakty) != 0
 
@@ -16,15 +15,12 @@ def display_contact():
     else:
         lista = ["Brak kontaktów"]
 
-
     def set_value(wybor): 
         nonlocal obiekt
         obiekt = slownik[wybor]
 
     def close_display_contact_window():
         choose_contact_window.destroy()
-
-
 
     def display():   
         choose_contact_window.destroy()
@@ -63,6 +59,8 @@ def display_contact():
         button_close=CTkButton(master=display_contact_window, text="Zamknij", corner_radius=12, command=display_contact_window.destroy)
         button_close.place(relx=0.99, rely=0.96, anchor="se")
 
+        if data_variable.DaltonMode: button_close.configure(fg_color="#1f6aa5", hover_color="#144870")
+        else: button_close.configure(fg_color="#FF4500",hover_color="#FF6347")
 
         display_contact_window.mainloop()
 
@@ -84,4 +82,12 @@ def display_contact():
     button_cancel=CTkButton(master=choose_contact_window, text="Anuluj", command=close_display_contact_window, corner_radius=12)
     button_cancel.place(relx=0.02, rely=0.96, anchor="sw")
 
+    if data_variable.DaltonMode:
+        button_confirm.configure(fg_color="#1f6aa5", hover_color="#144870")
+        button_cancel.configure(fg_color="#1f6aa5", hover_color="#144870")
+        
+    else:
+        button_confirm.configure(fg_color="#FF4500",hover_color="#FF6347")
+        button_cancel.configure(fg_color="#FF4500",hover_color="#FF6347")
+    
     choose_contact_window.mainloop()
