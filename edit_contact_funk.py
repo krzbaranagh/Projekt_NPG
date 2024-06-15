@@ -46,17 +46,6 @@ def edit_contact():
                 if len(value)!=0:
                     element=setattr(obiekt, element, value)
 
-            
-            # obiekt.imie=name
-            # obiekt.nazwisko=surname
-            # obiekt.telefon=phone
-            # obiekt.email=email
-
-            # print(obiekt.imie)
-            # print(obiekt.nazwisko)
-            # print(obiekt.telefon)
-            # print(obiekt.email)
-
             edit_contact_window.destroy()
             
             
