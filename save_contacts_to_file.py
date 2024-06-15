@@ -59,8 +59,13 @@ def save_contacts_to_txt():
         show_error_window() 
         return
 
+    unic_contacts= set()
+
     with open(file_path, 'w') as plik:
         for kontakt in Ksiazka.kontakty:
-            plik.write(f"{kontakt.imie} {kontakt.nazwisko} {kontakt.telefon} {kontakt.email}\n")
+            contact_info=(kontakt.imie, kontakt.nazwisko, kontakt.telefon, kontakt.email)
+            if contact_info not in unic_contacts:
+                unic_contacts.add(contact_info)
+                plik.write(f"{kontakt.imie} {kontakt.nazwisko} {kontakt.telefon} {kontakt.email}\n")
 
     show_confirmation_window()
