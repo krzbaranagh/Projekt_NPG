@@ -4,7 +4,7 @@ from customtkinter import *
 from data_contact import *
 import data_variable
 
-
+#główna funkcja
 def add_contact():
 
 
