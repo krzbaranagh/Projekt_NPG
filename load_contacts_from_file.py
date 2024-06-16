@@ -59,6 +59,7 @@ def load_contacts_from_txt():
         show_error_window()
         return
     
+    
     with open(file_path, 'r') as plik:
         for linia in plik:
             imie, nazwisko, telefon, email = linia.strip().split(' ')
