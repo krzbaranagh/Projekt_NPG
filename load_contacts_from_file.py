@@ -5,7 +5,7 @@ from customtkinter import *
 from data_contact import *
 import data_variable
 
-def show_confirmation_window():
+def show_confirmation_window() -> None:
 
     confirmation_window = ctk.CTk()
     confirmation_window.geometry("300x100")
@@ -14,7 +14,7 @@ def show_confirmation_window():
     label = ctk.CTkLabel(confirmation_window, text="Pomyślnie wczytano kontakty")
     label.pack(pady=10)
 
-    def close_window():
+    def close_window() -> None:
         confirmation_window.destroy()
 
     ok_button = ctk.CTkButton(confirmation_window, text="OK", command=close_window)
@@ -27,7 +27,7 @@ def show_confirmation_window():
 
     confirmation_window.mainloop()
 
-def show_error_window():
+def show_error_window() -> None:
         
     error_window = ctk.CTk()
     error_window.geometry("300x100")
@@ -36,7 +36,7 @@ def show_error_window():
     label = ctk.CTkLabel(error_window, text="Brak odpowiedniego pliku do wczytu kontaktów")
     label.pack(pady=10)
 
-    def close_window():
+    def close_window() -> None:
         error_window.destroy()
 
     ok_button = ctk.CTkButton(error_window, text="OK", command=close_window)
@@ -50,25 +50,22 @@ def show_error_window():
     error_window.mainloop()
 
 
-def load_contacts_from_txt():
+def load_contacts_from_txt() -> None:
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(current_dir, 'contacts_to_load.txt')
 
     if not os.path.exists(file_path):
         show_error_window()
-        return
+        return None
     
-
-
-
-
     with open(file_path, 'r') as plik:
         for linia in plik:
             imie, nazwisko, telefon, email = linia.strip().split(' <|--|> ')
             kontakt=Kontakt(imie, nazwisko, telefon, email)
             if kontakt not in Ksiazka.kontakty:
                 Ksiazka.kontakty.append(kontakt)
-          
-    
+                for grupa in Rejestr:
+                    grupa.binarna_lista.append(0)
+              
     show_confirmation_window()
