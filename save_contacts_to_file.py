@@ -5,7 +5,7 @@ from customtkinter import *
 import data_variable
 from data_contact import *
 
-def show_confirmation_window():
+def show_confirmation_window() -> None:
 
     confirmation_window = ctk.CTk()
     confirmation_window.geometry("300x100")
@@ -14,7 +14,7 @@ def show_confirmation_window():
     label = ctk.CTkLabel(confirmation_window, text="Pomyślnie zapisano kontakty do pliku")
     label.pack(pady=10)
 
-    def close_window():
+    def close_window() -> None:
         confirmation_window.destroy()
 
     ok_button = ctk.CTkButton(confirmation_window, text="OK", command=close_window)
@@ -36,7 +36,7 @@ def show_error_window() -> None:
     label = ctk.CTkLabel(error_window, text="Brak odpowiedniego pliku do zapisu kontaktów")
     label.pack(pady=10)
 
-    def close_window():
+    def close_window() -> None:
         error_window.destroy()
 
     ok_button = ctk.CTkButton(error_window, text="OK", command=close_window)
