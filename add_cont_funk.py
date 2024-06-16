@@ -18,13 +18,14 @@ def add_contact():
         phone=phone_entry.get()
         email=email_entry.get()
 
-        name=name.strip()           #usunąłem znaki spacji na końcu i początku entries by nie było dwóch podobnych kontaktów
-        surname=surname.strip()     #różniących się tylko spacjami 
-        phone=phone.replace(" ","") #na wszelki wypadek gdyby uzytkownik pisał nr telefeonu ze spacjami co 3 znaki 
+        name=name.strip()           
+        surname=surname.strip()     
+        phone=phone.replace(" ","")  
         email=email.strip()
 
-        if len(name) !=0 and len(surname) !=0 and len(phone) == 9 and phone.isnumeric() and len(email) !=0 and '@' in email:
-            #zmieniłem warunek tak aby phone miały tylko wartości liczbowe
+        if (len(name) !=0 and len(surname) !=0 and len(phone) == 9 and 
+            phone.isnumeric() and len(email) !=0 and '@' in email and " " not in email):
+            
             nowy_kontakt=Kontakt(name, surname, phone, email)
             Ksiazka.kontakty.append(nowy_kontakt)
             add_contact_window.destroy()
@@ -35,17 +36,13 @@ def add_contact():
                 statement1="Wszystkie pola muszą zostać wypełnione"
                 statement2=""
 
-            elif len(phone) != 9 and '@' not in email:
-                statement1="Numer powinien składa się z 9 cyfr"
-                statement2="Email musi zawierać @"
-
             elif len(phone) != 9 or not phone.isnumeric():
                 statement1="Numer składa się z 9 cyfr"
                 statement2="Może zawierać tylko znaki numeryczne"
 
-            elif '@' not in email:
+            elif '@' not in email or " " in email:
                 statement1="Email musi zawierać @"
-                statement2=""
+                statement2="Nie może zawierać znaku spacji"
                 
 
 
