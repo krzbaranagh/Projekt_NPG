@@ -33,7 +33,7 @@ def show_error_window():
     error_window.geometry("300x100")
     error_window.title("Odmowa")
 
-    label = ctk.CTkLabel(error_window, text="Brak odpowiedniego pliku to zapisu kontaktów")
+    label = ctk.CTkLabel(error_window, text="Brak odpowiedniego pliku do zapisu kontaktów")
     label.pack(pady=10)
 
     def close_window():
@@ -65,6 +65,6 @@ def save_contacts_to_txt():
             contact_info=(kontakt.imie, kontakt.nazwisko, kontakt.telefon, kontakt.email)
             if contact_info not in unic_contacts:
                 unic_contacts.add(contact_info)
-                plik.write(f"{kontakt.imie} {kontakt.nazwisko} {kontakt.telefon} {kontakt.email}\n")
+                plik.write(f"{kontakt.imie} <|--|> {kontakt.nazwisko} <|--|> {kontakt.telefon} <|--|> {kontakt.email}\n")
 
     show_confirmation_window()
