@@ -7,7 +7,7 @@ import data_variable
 #główna funkcja
 def add_contact():
 
-
+    #funkcja zamykająca okno
     def close_add_contact_window():
         add_contact_window.destroy()
 
