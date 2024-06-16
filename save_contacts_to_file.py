@@ -27,7 +27,7 @@ def show_confirmation_window():
 
     confirmation_window.mainloop()
 
-def show_error_window():
+def show_error_window() -> None:
         
     error_window = ctk.CTk()
     error_window.geometry("300x100")
@@ -49,7 +49,7 @@ def show_error_window():
 
     error_window.mainloop()
 
-def save_contacts_to_txt():
+def save_contacts_to_txt() -> None:
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(current_dir, 'saved_contacts.txt')
@@ -62,9 +62,12 @@ def save_contacts_to_txt():
 
     with open(file_path, 'w') as plik:
         for kontakt in Ksiazka.kontakty:
-            contact_info=(kontakt.imie, kontakt.nazwisko, kontakt.telefon, kontakt.email)
+            contact_info = (kontakt.imie, kontakt.nazwisko, kontakt.telefon, kontakt.email)
             if contact_info not in unic_contacts:
                 unic_contacts.add(contact_info)
                 plik.write(f"{kontakt.imie} <|--|> {kontakt.nazwisko} <|--|> {kontakt.telefon} <|--|> {kontakt.email}\n")
+
+        for grupa in Rejestr:           
+            plik.write(f"|>--<|{grupa}")            
 
     show_confirmation_window()
