@@ -62,6 +62,7 @@ class KsiazkaTeleadresowa:
                         else:
                             nazwa, ciąg = linia.strip().replace("|>--<|","").split(" <|--|> ")
                             grupa = GrupaKontaktów(nazwa, ciąg)
+                            Rejestr.append(grupa)
                             
         else:
             self.kontakty = []
