@@ -67,7 +67,4 @@ def save_contacts_to_txt() -> None:
                 unic_contacts.add(contact_info)
                 plik.write(f"{kontakt.imie} <|--|> {kontakt.nazwisko} <|--|> {kontakt.telefon} <|--|> {kontakt.email}\n")
 
-        for grupa in Rejestr:           
-            plik.write(f"|>--<|{grupa}")            
-
     show_confirmation_window()
