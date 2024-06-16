@@ -65,7 +65,7 @@ def load_contacts_from_txt():
 
     with open(file_path, 'r') as plik:
         for linia in plik:
-            imie, nazwisko, telefon, email = linia.split(' <|--|> ')
+            imie, nazwisko, telefon, email = linia.strip().split(' <|--|> ')
             kontakt=Kontakt(imie, nazwisko, telefon, email)
             if kontakt not in Ksiazka.kontakty:
                 Ksiazka.kontakty.append(kontakt)
