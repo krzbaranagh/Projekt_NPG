@@ -4,23 +4,23 @@ from customtkinter import *
 from data_contact import *
 import data_variable
 
-def delete_contact():
+def delete_contact() -> None:
     obiekt : Kontakt
-    niepusta : bool = len(Ksiazka.kontakty) != 0
 
-    if niepusta: 
-        
+    if len(Ksiazka.kontakty): 
         lista = [adres.imie + " " + adres.nazwisko for adres in Ksiazka.kontakty]
         obiekt=Ksiazka.kontakty[0]
     else:
         lista = ["Brak kontaktów"]
-    def wybor_kontaktu(wybor):
+
+    def wybor_kontaktu(wybor) -> None:
         nonlocal obiekt
         for x in Ksiazka.kontakty:
             if x.imie + " " + x.nazwisko == wybor:
                 obiekt = x
                 print("wykonalo")
-    def delete_and_close_window():
+
+    def delete_and_close_window() -> None:
         if obiekt in Ksiazka.kontakty:
             print("jest")
             Ksiazka.kontakty.remove(obiekt)
@@ -31,8 +31,6 @@ def delete_contact():
     delete_contact_window.title("Delete contact")
     delete_contact_window.geometry("400x150")
     
-
-
     label_start = ctk.CTkLabel(delete_contact_window, text="Który kontakt chcesz usunąć ?")
     label_start.pack(pady=10)
 
@@ -52,9 +50,5 @@ def delete_contact():
     else: 
         button_confirm.configure(fg_color="#FF4500",hover_color="#FF6347")
         button_cancel.configure(fg_color="#FF4500",hover_color="#FF6347")
-
-
-
-
 
     delete_contact_window.mainloop()
