@@ -1,7 +1,7 @@
 import customtkinter as ctk
 from customtkinter import *
 from data_contact import *
-
+import data_variable
 
 def edit_contact():
 
@@ -46,17 +46,6 @@ def edit_contact():
                 if len(value)!=0:
                     element=setattr(obiekt, element, value)
 
-            
-            # obiekt.imie=name
-            # obiekt.nazwisko=surname
-            # obiekt.telefon=phone
-            # obiekt.email=email
-
-            # print(obiekt.imie)
-            # print(obiekt.nazwisko)
-            # print(obiekt.telefon)
-            # print(obiekt.email)
-
             edit_contact_window.destroy()
             
             
@@ -100,6 +89,11 @@ def edit_contact():
         button_confirm=CTkButton(master=edit_contact_window, text="Zatwierdź", command=save_changes_and_close_window, corner_radius=12)
         button_confirm.place(relx=0.98, rely=0.98, anchor="se")
 
+        if data_variable.DaltonMode: 
+            button_confirm.configure(fg_color="#1f6aa5", hover_color="#144870")
+        else: 
+            button_confirm.configure(fg_color="#FF4500",hover_color="#FF6347")
+
         edit_contact_window.mainloop()
         
 
@@ -113,10 +107,21 @@ def edit_contact():
     label_start = ctk.CTkLabel(choose_contact_window, text="Który kontakt chcesz edytować ?")
     label_start.pack(pady=10)
 
-    contact_choice=CTkComboBox(master=choose_contact_window, values=lista, command=set_value if niepusta else None)
+    contact_choice=CTkComboBox(master=choose_contact_window, values=lista, command=set_value if niepusta else None, width=150)
     contact_choice.pack(pady=10)
 
     button_confirm=CTkButton(master=choose_contact_window, text="Zatwierdź", corner_radius=12, command=confirm_and_edit)
     button_confirm.place(relx=0.99, rely=0.96, anchor="se")
+
+    button_cancel=CTkButton(master=choose_contact_window, text="Anuluj", command=choose_contact_window.destroy, corner_radius=12)
+    button_cancel.place(relx=0.02, rely=0.98, anchor="sw")
+
+    if data_variable.DaltonMode: 
+        button_confirm.configure(fg_color="#1f6aa5", hover_color="#144870")
+        button_cancel.configure(fg_color="#1f6aa5", hover_color="#144870")
+
+    else: 
+        button_confirm.configure(fg_color="#FF4500",hover_color="#FF6347")
+        button_cancel.configure(fg_color="#FF4500",hover_color="#FF6347")
 
     choose_contact_window.mainloop()

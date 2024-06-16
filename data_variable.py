@@ -1,0 +1,1 @@
+DaltonMode: bool = 0

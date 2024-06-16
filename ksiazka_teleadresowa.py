@@ -9,45 +9,40 @@ import edit_contact_funk
 from data_contact import *
 import save_contacts_to_file
 import load_contacts_from_file
+import data_variable
 
 main_window = ctk.CTk()
 main_window.title("Phonebook")
 main_window.geometry("650x430")
 main_window.resizable(False, False)
 
-
 def close_main_window():
     Ksiazka.data_save()
     main_window.destroy()
 
 
-def close_window_and_confirm_data():
-    print("ok")
+
+def set_colors():
+    for button in buttons:
+        button.configure(fg_color="#FF4500",hover_color="#FF6347")
+
+def set_dalton_colors():
+    for button in buttons:
+        button.configure(fg_color="#1f6aa5", hover_color="#144870")
+
+
+
+data_variable.DaltonMode = 1
 
 def toggle_dalton_mode():
-    if dalton_switch.get() == 1:
-        # Włączenie trybu dla daltonistów
-        main_window.configure(bg='#2C2C2C')
-        button_close.configure(fg_color="#FF4500")
-        add_contact_button.configure(fg_color="#FF4500", hover_color="#FF6347")
-        display_contact_button.configure(fg_color="#FF4500", hover_color="#FF6347")
-        edit_contact_button.configure(fg_color="#FF4500", hover_color="#FF6347")
-        delete_contact_button.configure(fg_color="#FF4500", hover_color="#FF6347")
-        save_contacts_to_file_button.configure(fg_color="#FF4500", hover_color="#FF6347")
-        load_contacts_to_file_button.configure(fg_color="#FF4500", hover_color="#FF6347")
-    else:
-        # Wyłączenie trybu dla daltonistów, powrót do domyślnych kolorów
-        main_window.configure(bg='#FFFFFF')
-        button_close.configure(fg_color="#a51b0b")
-        add_contact_button.configure(fg_color="#1f6aa5", hover_color="#144870")
-        display_contact_button.configure(fg_color="#1f6aa5", hover_color="#144870")
-        edit_contact_button.configure(fg_color="#1f6aa5", hover_color="#144870")
-        delete_contact_button.configure(fg_color="#1f6aa5", hover_color="#144870")
-        save_contacts_to_file_button.configure(fg_color="#1f6aa5", hover_color="#144870")
-        load_contacts_to_file_button.configure(fg_color="#1f6aa5", hover_color="#144870")
+    if dalton_switch.get() == 1: 
+        data_variable.DaltonMode = 0
+        set_colors()
+    else: 
+        data_variable.DaltonMode = 1
+        set_dalton_colors()
+        
 
-
-    
 button_close = ctk.CTkButton(master=main_window, text="Zamknij", command=close_main_window, corner_radius=12, fg_color="#a51b0b")
 button_close.place(relx=0.98, rely=0.02, anchor="ne")
 
@@ -69,11 +64,11 @@ save_contacts_to_file_button.pack(pady=10)
 load_contacts_to_file_button = ctk.CTkButton(master=main_window, text="Odczytaj dane z pliku", command=load_contacts_from_file.load_contacts_from_txt, width=200, height=50, corner_radius=12)
 load_contacts_to_file_button.pack(pady=10)
 
-dalton_switch=CTkSwitch(master=main_window, text="Tryb dla daltonistów", command=toggle_dalton_mode)
+dalton_switch=CTkSwitch(master=main_window, text="Tryb dla daltonistów", command=toggle_dalton_mode, fg_color="#FF4500")
 dalton_switch.place(relx=0.98, rely=0.98, anchor="se")
 
 
-    
 
+buttons= [button_close, add_contact_button, display_contact_button, edit_contact_button, delete_contact_button, save_contacts_to_file_button, load_contacts_to_file_button]
 
 main_window.mainloop()
