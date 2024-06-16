@@ -5,13 +5,12 @@ from data_contact import *
 import data_variable
 
 
-def add_contact():
+def add_contact() -> None:
 
-
-    def close_add_contact_window():
+    def close_add_contact_window() -> None:
         add_contact_window.destroy()
 
-    def save_data_close_window():
+    def save_data_close_window() -> None:
 
         name=name_entry.get()
         surname=surname_entry.get()
@@ -31,7 +30,6 @@ def add_contact():
             add_contact_window.destroy()
 
         else:
-            
             if len(name) == 0 or len(surname) == 0 or len(phone) == 0 or len(email) == 0:
                 statement1="Wszystkie pola muszą zostać wypełnione"
                 statement2=""
@@ -44,15 +42,11 @@ def add_contact():
                 statement1="Email musi zawierać @"
                 statement2="Nie może zawierać znaku spacji"
                 
-
-
-
             error_window=ctk.CTk()
             error_window.resizable(False, False)
             error_window.title("Błąd")
             error_window.geometry("300x110")
         
-
             label_error1 = ctk.CTkLabel(error_window, text=statement1)
             label_error1.place(relx=0.5, rely=0.1, anchor="n")
 
@@ -74,7 +68,6 @@ def add_contact():
     add_contact_window.title("Dodaj kontakt")
     add_contact_window.geometry("400x400")
     
-
     label_start = ctk.CTkLabel(add_contact_window, text="Podaj dane poniżej")
     label_start.pack()
 
@@ -89,7 +82,6 @@ def add_contact():
 
     email_label = ctk.CTkLabel(add_contact_window, text="Email:")
     email_label.place(x=60, y=250)
-
 
     name_entry=CTkEntry(master=add_contact_window, placeholder_text="Start typing...", width=200, text_color="#FFCC70")
     name_entry.place(x=140, y=70)
@@ -106,7 +98,6 @@ def add_contact():
     button_confirm=CTkButton(master=add_contact_window, text="Zatwierdź", command=save_data_close_window, corner_radius=12)
     button_confirm.place(relx=0.98, rely=0.98, anchor="se")
     
-
     button_cancel=CTkButton(master=add_contact_window, text="Anuluj", command=close_add_contact_window, corner_radius=12)
     button_cancel.place(relx=0.02, rely=0.98, anchor="sw")
 
@@ -117,5 +108,4 @@ def add_contact():
         button_cancel.configure(fg_color="#FF4500",hover_color="#FF6347")
         button_confirm.configure(fg_color="#FF4500",hover_color="#FF6347")
         
-
     add_contact_window.mainloop()
