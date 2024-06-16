@@ -31,29 +31,29 @@ def display_contact():
         display_contact_window.geometry("320x295")
 
         name_label = ctk.CTkLabel(display_contact_window, text="Imie: ")
-        name_label.place(x=60, y=20)
+        name_label.place(x=20, y=20)
 
         surname_label = ctk.CTkLabel(display_contact_window, text="Nazwisko: ")
-        surname_label.place(x=60, y=80)
+        surname_label.place(x=20, y=80)
 
         phone_label = ctk.CTkLabel(display_contact_window, text="Telefon: ")
-        phone_label.place(x=60, y=140)
+        phone_label.place(x=20, y=140)
 
         email_label = ctk.CTkLabel(display_contact_window, text="Email: ")
-        email_label.place(x=60, y=200)
+        email_label.place(x=20, y=200)
 
 
         value_name_label = ctk.CTkLabel(display_contact_window, text=obiekt.imie)
-        value_name_label.place(x=130, y=20)
+        value_name_label.place(x=90, y=20)
 
         value_surname_label = ctk.CTkLabel(display_contact_window, text=obiekt.nazwisko)
-        value_surname_label.place(x=130, y=80)
+        value_surname_label.place(x=90, y=80)
 
         value_phone_label = ctk.CTkLabel(display_contact_window, text=(obiekt.telefon[0:3]+"-"+obiekt.telefon[3:6]+"-"+obiekt.telefon[6:9]))
-        value_phone_label.place(x=130, y=140)
+        value_phone_label.place(x=90, y=140)
 
         value_email_label = ctk.CTkLabel(display_contact_window, text=obiekt.email)
-        value_email_label.place(x=130, y=200)
+        value_email_label.place(x=90, y=200)
 
 
         button_close=CTkButton(master=display_contact_window, text="Zamknij", corner_radius=12, command=display_contact_window.destroy)
@@ -73,7 +73,7 @@ def display_contact():
     label_start = ctk.CTkLabel(choose_contact_window, text="Kogo dane chcesz zobaczyć ?")
     label_start.pack(pady=10)
 
-    contact_choice=CTkComboBox(master=choose_contact_window, values=lista ,command= set_value if niepusta else None)
+    contact_choice=CTkComboBox(master=choose_contact_window, values=lista ,command= set_value if niepusta else None, width=150)
     contact_choice.pack(pady=10)
 
     button_confirm=CTkButton(master=choose_contact_window, text="Zatwierdź", corner_radius=12, command= display if niepusta else close_display_contact_window)

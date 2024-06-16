@@ -11,6 +11,18 @@ class Kontakt:
     def __str__(self):
         return f"{self.imie} {self.nazwisko}, {self.telefon}, {self.email}"
 
+    def __eq__(self, other):
+        if isinstance(other, Kontakt):
+            return (self.imie == other.imie and
+                    self.nazwisko == other.nazwisko and
+                    self.telefon == other.telefon and
+                    self.email == other.email)
+        return False
+    
+    def __hash__(self):
+        return hash((self.imie, self.nazwisko, self.telefon, self.email))
+
+
 class KsiazkaTeleadresowa:
     def __init__(self): 
         self.kontakty = []
@@ -34,11 +46,7 @@ class KsiazkaTeleadresowa:
         else:
             self.kontakty = []
 
-k1 = Kontakt("Tomek", "Jajko",  "543654564", "tomekjajko@gmail.com")
-k2 = Kontakt("Jacek", "Placek", "769474839", "placekjacek@gmail.com")
-k3 = Kontakt("Bogdan", "Doniek", "203633768", "DoniekB@gmail.com")
-k4 = Kontakt("Maciej", "Wozny", "948793675", "KoloMaciejow@gmail.com")
-k5 = Kontakt("Romek", "Szybki", "846593645", "romekszybki@gmail.com")
 
-Ksiazka = KsiazkaTeleadresowa() #ten obiekt uzylem w wyswietlaniu kontaktow
+
+Ksiazka = KsiazkaTeleadresowa() 
 Ksiazka.data_load()

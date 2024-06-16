@@ -59,10 +59,16 @@ def load_contacts_from_txt():
         show_error_window()
         return
     
+
+
+
+
     with open(file_path, 'r') as plik:
         for linia in plik:
             imie, nazwisko, telefon, email = linia.strip().split(' ')
-            kontakt = Kontakt(imie, nazwisko, telefon, email)
-            Ksiazka.kontakty.append(kontakt)
+            kontakt=Kontakt(imie, nazwisko, telefon, email)
+            if kontakt not in Ksiazka.kontakty:
+                Ksiazka.kontakty.append(kontakt)
+          
     
     show_confirmation_window()

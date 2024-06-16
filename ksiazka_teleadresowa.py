@@ -20,30 +20,17 @@ def close_main_window():
     Ksiazka.data_save()
     main_window.destroy()
 
-def close_window_and_confirm_data():
-    print("ok")
+
 
 def set_colors():
-    # Włączenie trybu dla daltonistów
-    main_window.configure(bg='#2C2C2C')
-    button_close.configure(fg_color="#FF4500",hover_color="#FF6347")
-    add_contact_button.configure(fg_color="#FF4500", hover_color="#FF6347")
-    display_contact_button.configure(fg_color="#FF4500", hover_color="#FF6347")
-    edit_contact_button.configure(fg_color="#FF4500", hover_color="#FF6347")
-    delete_contact_button.configure(fg_color="#FF4500", hover_color="#FF6347")
-    save_contacts_to_file_button.configure(fg_color="#FF4500", hover_color="#FF6347")
-    load_contacts_to_file_button.configure(fg_color="#FF4500", hover_color="#FF6347")
+    for button in buttons:
+        button.configure(fg_color="#FF4500",hover_color="#FF6347")
 
 def set_dalton_colors():
-    # Wyłączenie trybu dla daltonistów, powrót do domyślnych kolorów
-    main_window.configure(bg='#FFFFFF')
-    button_close.configure(fg_color="#a51b0b")
-    add_contact_button.configure(fg_color="#1f6aa5", hover_color="#144870")
-    display_contact_button.configure(fg_color="#1f6aa5", hover_color="#144870")
-    edit_contact_button.configure(fg_color="#1f6aa5", hover_color="#144870")
-    delete_contact_button.configure(fg_color="#1f6aa5", hover_color="#144870")
-    save_contacts_to_file_button.configure(fg_color="#1f6aa5", hover_color="#144870")
-    load_contacts_to_file_button.configure(fg_color="#1f6aa5", hover_color="#144870")
+    for button in buttons:
+        button.configure(fg_color="#1f6aa5", hover_color="#144870")
+
+
 
 data_variable.DaltonMode = 1
 
@@ -79,5 +66,9 @@ load_contacts_to_file_button.pack(pady=10)
 
 dalton_switch=CTkSwitch(master=main_window, text="Tryb dla daltonistów", command=toggle_dalton_mode, fg_color="#FF4500")
 dalton_switch.place(relx=0.98, rely=0.98, anchor="se")
+
+
+
+buttons= [button_close, add_contact_button, display_contact_button, edit_contact_button, delete_contact_button, save_contacts_to_file_button, load_contacts_to_file_button]
 
 main_window.mainloop()

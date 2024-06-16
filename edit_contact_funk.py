@@ -107,15 +107,21 @@ def edit_contact():
     label_start = ctk.CTkLabel(choose_contact_window, text="Który kontakt chcesz edytować ?")
     label_start.pack(pady=10)
 
-    contact_choice=CTkComboBox(master=choose_contact_window, values=lista, command=set_value if niepusta else None)
+    contact_choice=CTkComboBox(master=choose_contact_window, values=lista, command=set_value if niepusta else None, width=150)
     contact_choice.pack(pady=10)
 
     button_confirm=CTkButton(master=choose_contact_window, text="Zatwierdź", corner_radius=12, command=confirm_and_edit)
     button_confirm.place(relx=0.99, rely=0.96, anchor="se")
 
+    button_cancel=CTkButton(master=choose_contact_window, text="Anuluj", command=choose_contact_window.destroy, corner_radius=12)
+    button_cancel.place(relx=0.02, rely=0.98, anchor="sw")
+
     if data_variable.DaltonMode: 
         button_confirm.configure(fg_color="#1f6aa5", hover_color="#144870")
+        button_cancel.configure(fg_color="#1f6aa5", hover_color="#144870")
+
     else: 
         button_confirm.configure(fg_color="#FF4500",hover_color="#FF6347")
+        button_cancel.configure(fg_color="#FF4500",hover_color="#FF6347")
 
     choose_contact_window.mainloop()
