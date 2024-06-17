@@ -3,6 +3,6 @@ Jakub Borowiecki 123456789 jakubborowiecki@student.agh.edu.pl
 Bartosz Bilik 123456789 bartoszbilik@student.agh.edu.pl
 Norbert Boron 795184855 norbiboron@student.agh.edu.pl
 Filip Bachanek 123456789 filipbachanek@student.agh.edu.pl
-£ukasz Bros 123456789 brosiu@gmail.com
+Lukasz Bros 123456789 brosiu@gmail.com
 Mateusz Bak 987654321 mlody@wp.pl
-Micha³ Augustynski 213721159 wurs@onet.pl
+Michal Augustynski 213721159 wurs@onet.pl
