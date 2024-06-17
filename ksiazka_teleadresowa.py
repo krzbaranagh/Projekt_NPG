@@ -14,7 +14,7 @@ import add_edit_add_to_groups
 
 main_window = ctk.CTk()
 main_window.title("Phonebook")
-main_window.geometry("650x480")
+main_window.geometry("650x550")
 main_window.resizable(False, False)
 
 def close_main_window() -> None:

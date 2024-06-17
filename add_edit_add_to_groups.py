@@ -18,7 +18,7 @@ def add_contacts_group() -> None:
             error_window=ctk.CTk()
             error_window.resizable(False, False)
             error_window.title("Błąd")
-            error_window.geometry("200x55")
+            error_window.geometry("200x90")
         
             label_error = ctk.CTkLabel(error_window, text = "Istnieje grupa o podanej nazwie")
             label_error.place(relx = 0.5, rely = 0.1, anchor = "n")
@@ -37,9 +37,9 @@ def add_contacts_group() -> None:
         add_contacts_group_window.destroy()
     
     add_contacts_group_window=ctk.CTk()
-    add_contacts_group_window(False, False)
-    add_contacts_group_window("Dodaj grupę kontaktów")
-    add_contacts_group_window("250x250")
+    add_contacts_group_window.resizable(False, False)
+    add_contacts_group_window.title("Dodaj grupę kontaktów")
+    add_contacts_group_window.geometry("400x200")
 
     label_start = ctk.CTkLabel(add_contacts_group_window, text="Podaj dane poniżej")
     label_start.pack()
@@ -89,7 +89,7 @@ def remove_contacts_group() -> None:
 
     remove_contacts_group_window=ctk.CTk()
     remove_contacts_group_window.resizable(False, False)
-    remove_contacts_group_window.title("Delete contact")
+    remove_contacts_group_window.title("Usuń grupę")
     remove_contacts_group_window.geometry("400x150")
     
     label_start = ctk.CTkLabel(remove_contacts_group_window, text = "Którą grupę chcesz usunąć?")
@@ -101,7 +101,7 @@ def remove_contacts_group() -> None:
     button_confirm  =CTkButton(master = remove_contacts_group_window, text = "Zatwierdź", corner_radius = 12, command = delete_contacts_group_and_close)
     button_confirm.place(relx = 0.99, rely = 0.96, anchor = "se")
 
-    button_cancel = CTkButton(master = delete_contact_window, text  = "Anuluj", command = remove_contacts_group_window.destroy, corner_radius = 12)
+    button_cancel = CTkButton(master = remove_contacts_group_window, text  = "Anuluj", command = remove_contacts_group_window.destroy, corner_radius = 12)
     button_cancel.place(relx = 0.02, rely = 0.98, anchor = "sw")
 
     if data_variable.DaltonMode: 
@@ -117,11 +117,8 @@ def remove_contacts_group() -> None:
 def add_edit_add_to_groups() -> None:
     add_edit_add_to_groups_window=ctk.CTk()
     add_edit_add_to_groups_window.resizable(False, False)
-    add_edit_add_to_groups_window.title("Delete contact")
-    add_edit_add_to_groups_window.geometry("400x350")
-
-    button_close=CTkButton(master = add_edit_add_to_groups_window, text = "Zamknij", command = add_edit_add_to_groups_window.destroy, corner_radius = 12)
-    button_close.place(relx = 0.02, rely = 0.98, anchor = "se")
+    add_edit_add_to_groups_window.title("Zarządzaj grupami")
+    add_edit_add_to_groups_window.geometry("300x150")
 
     button_add_contacts_group = ctk.CTkButton(master = add_edit_add_to_groups_window, text = "Dodaj grupę kontaktów", command = add_contacts_group, corner_radius = 12, fg_color = "#a51b0b")
     button_add_contacts_group.pack(pady = 10)
@@ -130,11 +127,9 @@ def add_edit_add_to_groups() -> None:
     button_remove_contacts_group.pack(pady = 10)
 
     if data_variable.DaltonMode: 
-        button_close.configure(fg_color = "#1f6aa5", hover_color = "#144870")
         button_remove_contacts_group.configure(fg_color = "#1f6aa5", hover_color = "#144870")
         button_add_contacts_group.configure(fg_color = "#1f6aa5", hover_color = "#144870")
     else: 
-        button_close.configure(fg_color = "#FF4500", hover_color = "#FF6347")
         button_remove_contacts_group.configure(fg_color = "#FF4500", hover_color = "#FF6347")
         button_add_contacts_group.configure(fg_color = "#FF4500", hover_color = "#FF6347")
 

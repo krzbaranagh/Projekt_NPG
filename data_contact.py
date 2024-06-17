@@ -33,7 +33,7 @@ class GrupaKontaktów:
     def __str__(self):
         str_representation: str = f"{self.nazwa} <|--|> " 
         for index in range(len(self.binarna_lista)):
-            str_representation =+ str(self.binarna_lista[index])
+            str_representation = str_representation + str(self.binarna_lista[index])
         return str_representation
 
 class KsiazkaTeleadresowa:
