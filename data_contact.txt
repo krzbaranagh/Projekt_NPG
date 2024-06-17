@@ -3,3 +3,5 @@ Jakub <|--|> Borowiecki <|--|> 123456789 <|--|> jakubborowiecki@student.agh.edu.
 Bartosz <|--|> Bilik <|--|> 123456789 <|--|> bartoszbilik@student.agh.edu.pl
 Norbert <|--|> Boron <|--|> 795184855 <|--|> norbiboron@student.agh.edu.pl
 Filip Bachanek <|--|> 123456789 <|--|> filipbachanek@student.agh.edu.pl
+|>--<|Rodzina <|--|> 11000
+|>--<|Praca <|--|> 00011
