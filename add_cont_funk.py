@@ -27,6 +27,8 @@ def add_contact() -> None:
             
             nowy_kontakt=Kontakt(name, surname, phone, email)
             Ksiazka.kontakty.append(nowy_kontakt)
+            for grupa in Rejestr:
+                grupa.binarna_lista.append(0)
             add_contact_window.destroy()
 
         else:
