@@ -63,7 +63,7 @@ def load_contacts_from_txt():
 
 
 
-    with open(file_path, 'r') as plik:
+    with open(file_path, 'r', encoding="utf-8" ) as plik:
         for linia in plik:
             imie, nazwisko, telefon, email = linia.strip().split(' ')
             kontakt=Kontakt(imie, nazwisko, telefon, email)
