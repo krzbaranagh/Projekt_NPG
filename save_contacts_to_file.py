@@ -33,7 +33,7 @@ def show_error_window() -> None:
     error_window.geometry("300x100")
     error_window.title("Odmowa")
 
-    label = ctk.CTkLabel(error_window, text="Brak odpowiedniego pliku do zapisu kontaktów")
+    label = ctk.CTkLabel(error_window, text = "Brak odpowiedniego pliku do zapisu kontaktów")
     label.pack(pady=10)
 
     def close_window() -> None:
