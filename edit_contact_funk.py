@@ -80,7 +80,7 @@ def edit_contact() -> None:
 
         edit_contact_window.mainloop()
         
-    choose_contact_window=ctk.CTk()
+    choose_contact_window = ctk.CTk()
     choose_contact_window.resizable(False, False)
     choose_contact_window.title("Edit contact")
     choose_contact_window.geometry("400x150")
