@@ -49,19 +49,19 @@ def add_contact() -> None:
             error_window.title("Błąd")
             error_window.geometry("300x110")
         
-            label_error1 = ctk.CTkLabel(error_window, text=statement1)
-            label_error1.place(relx=0.5, rely=0.1, anchor="n")
+            label_error1 = ctk.CTkLabel(error_window, text = statement1)
+            label_error1.place(relx = 0.5, rely = 0.1, anchor = "n")
 
-            label_error2 = ctk.CTkLabel(error_window, text=statement2)
-            label_error2.place(relx=0.5, rely=0.3, anchor="n")
+            label_error2 = ctk.CTkLabel(error_window, text = statement2)
+            label_error2.place(relx = 0.5, rely = 0.3, anchor = "n")
 
-            button_confirm=CTkButton(master=error_window, text="Zatwierdź", command=error_window.destroy, corner_radius=12)
-            button_confirm.place(relx=0.97, rely=0.93, anchor="se")
+            button_confirm=CTkButton(master = error_window, text = "Zatwierdź", command = error_window.destroy, corner_radius = 12)
+            button_confirm.place(relx = 0.97, rely = 0.93, anchor = "se")
 
             if data_variable.DaltonMode: 
-                button_confirm.configure(fg_color="#1f6aa5", hover_color="#144870")
+                button_confirm.configure(fg_color = "#1f6aa5", hover_color = "#144870")
             else: 
-                button_confirm.configure(fg_color="#FF4500",hover_color="#FF6347")
+                button_confirm.configure(fg_color = "#FF4500",hover_color = "#FF6347")
 
             error_window.mainloop()
 
