@@ -39,7 +39,7 @@ def show_error_window() -> None:
     def close_window() -> None:
         error_window.destroy()
 
-    ok_button = ctk.CTkButton(error_window, text="OK", command=close_window)
+    ok_button = ctk.CTkButton(error_window, text = "OK", command=close_window)
     ok_button.pack(pady=10)
 
     if data_variable.DaltonMode:
