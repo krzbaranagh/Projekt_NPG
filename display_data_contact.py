@@ -4,25 +4,24 @@ from customtkinter import *
 from data_contact import *
 import data_variable
 
-def display_contact():   
+def display_contact() -> None:   
     obiekt : Kontakt
-    niepusta : bool = len(Ksiazka.kontakty) != 0
-
-    if niepusta: 
+    
+    if len(Ksiazka.kontakty): 
         obiekt = Ksiazka.kontakty[0]
         slownik = {(adres.imie + " " + adres.nazwisko) :adres for adres in Ksiazka.kontakty}
         lista = [adres.imie + " " + adres.nazwisko for adres in Ksiazka.kontakty]
     else:
         lista = ["Brak kontaktów"]
 
-    def set_value(wybor): 
+    def set_value(wybor) -> None: 
         nonlocal obiekt
         obiekt = slownik[wybor]
 
-    def close_display_contact_window():
+    def close_display_contact_window() -> None:
         choose_contact_window.destroy()
 
-    def display():   
+    def display() -> None:   
         choose_contact_window.destroy()
 
         display_contact_window=ctk.CTk()
@@ -42,7 +41,6 @@ def display_contact():
         email_label = ctk.CTkLabel(display_contact_window, text="Email: ")
         email_label.place(x=20, y=200)
 
-
         value_name_label = ctk.CTkLabel(display_contact_window, text=obiekt.imie)
         value_name_label.place(x=90, y=20)
 
@@ -55,12 +53,13 @@ def display_contact():
         value_email_label = ctk.CTkLabel(display_contact_window, text=obiekt.email)
         value_email_label.place(x=90, y=200)
 
-
         button_close=CTkButton(master=display_contact_window, text="Zamknij", corner_radius=12, command=display_contact_window.destroy)
         button_close.place(relx=0.99, rely=0.96, anchor="se")
 
-        if data_variable.DaltonMode: button_close.configure(fg_color="#1f6aa5", hover_color="#144870")
-        else: button_close.configure(fg_color="#FF4500",hover_color="#FF6347")
+        if data_variable.DaltonMode: 
+            button_close.configure(fg_color="#1f6aa5", hover_color="#144870")
+        else: 
+            button_close.configure(fg_color="#FF4500",hover_color="#FF6347")
 
         display_contact_window.mainloop()
 
@@ -68,15 +67,14 @@ def display_contact():
     choose_contact_window.resizable(False, False)
     choose_contact_window.title("Display contact")
     choose_contact_window.geometry("400x150")
-    choose_contact_window.resizable(False, False)
 
     label_start = ctk.CTkLabel(choose_contact_window, text="Kogo dane chcesz zobaczyć ?")
     label_start.pack(pady=10)
 
-    contact_choice=CTkComboBox(master=choose_contact_window, values=lista ,command= set_value if niepusta else None, width=150)
+    contact_choice=CTkComboBox(master=choose_contact_window, values=lista ,command= set_value if len(Ksiazka.kontakty) else None, width=150)
     contact_choice.pack(pady=10)
 
-    button_confirm=CTkButton(master=choose_contact_window, text="Zatwierdź", corner_radius=12, command= display if niepusta else close_display_contact_window)
+    button_confirm=CTkButton(master=choose_contact_window, text="Zatwierdź", corner_radius=12, command= display if len(Ksiazka.kontakty) else close_display_contact_window)
     button_confirm.place(relx=0.98, rely=0.96, anchor="se")
 
     button_cancel=CTkButton(master=choose_contact_window, text="Anuluj", command=close_display_contact_window, corner_radius=12)
