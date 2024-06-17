@@ -47,7 +47,7 @@ class KsiazkaTeleadresowa:
             for kontakt in Ksiazka.kontakty:
                 plik.write(f"{kontakt.imie} <|--|> {kontakt.nazwisko} <|--|> {kontakt.telefon} <|--|> {kontakt.email}\n")
             for grupa in Rejestr:
-                plik.write(f"|>--<|{grupa}")
+                plik.write(f"|>--<|{grupa}\n")
 
     def data_load(self) -> None:
         current_dir = os.path.dirname(os.path.abspath(__file__))
