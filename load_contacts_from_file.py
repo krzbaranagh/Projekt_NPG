@@ -1,4 +1,3 @@
-import pickle
 import os
 import customtkinter as ctk
 from customtkinter import *
@@ -63,11 +62,11 @@ def load_contacts_from_txt():
 
 
 
-<<<<<<< HEAD
-    with open(file_path, 'r', encoding="utf-8" ) as plik:
-=======
+
+
+
     with open(file_path, 'r', encoding="utf-8") as plik:
->>>>>>> 38c3f219ce9d25abcc56bcd85db931b6d6da9802
+
         for linia in plik:
             imie, nazwisko, telefon, email = linia.strip().split(' ')
             kontakt=Kontakt(imie, nazwisko, telefon, email)
