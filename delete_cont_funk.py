@@ -23,12 +23,12 @@ def delete_contact() -> None:
     def delete_and_close_window() -> None:
         if obiekt in Ksiazka.kontakty:
             print("jest")
+
+            index = Ksiazka.kontakty.index(obiekt)
+            for grupa in Rejestr:
+                grupa.binarna_lista.remove(index)
             Ksiazka.kontakty.remove(obiekt)
 
-        index = Ksiazka.kontakty.index(obiekt)
-        for grupa in Rejestr:
-            grupa.binarna_lista.pop(index)
-            
         delete_contact_window.destroy()
         
     delete_contact_window = ctk.CTk()

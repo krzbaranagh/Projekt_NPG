@@ -1,4 +1,3 @@
-Krzysztof <|--|> Baran <|--|> 987654321 <|--|> krzbaran@student.agh.edu.pl
 Jakub <|--|> Borowiecki <|--|> 123456789 <|--|> jakubborowiecki@student.agh.edu.pl
 Bartosz <|--|> Bilik <|--|> 123456789 <|--|> bartoszbilik@student.agh.edu.pl
 Norbert <|--|> Boron <|--|> 795184855 <|--|> norbiboron@student.agh.edu.pl
@@ -9,8 +8,8 @@ Mateusz <|--|> Bak <|--|> 987654321 <|--|> mlody@wp.pl
 Michal <|--|> Augustynski <|--|> 213721159 <|--|> wurs@onet.pl
 Piotr <|--|> Stolarz <|--|> 223344556 <|--|> stolarz@onet.pl
 Stefan <|--|> Siarzewski <|--|> 666102456 <|--|> stafcia.@gmail.com
-|>--<|Rodzina <|--|> 11000000000
-|>--<|Praca <|--|> 00011000000
-|>--<|Szkola <|--|> 00000000000
-|>--<|Cwele z 14 pietra <|--|> 00000000000
-|>--<|Przyjaciele <|--|> 00000000000
+|>--<|Rodzina <|--|> 1100000000
+|>--<|Praca <|--|> 0011000000
+|>--<|Szkola <|--|> 0000000000
+|>--<|Cwele z 14 pietra <|--|> 0000000000
+|>--<|Przyjaciele <|--|> 0000000000
